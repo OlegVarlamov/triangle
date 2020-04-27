@@ -59,6 +59,8 @@ function handleSubmit(e) {
 
   const output = document.querySelector(".output");
 
+  console.log(a, b, c);
+
   output.insertAdjacentHTML("beforeend", zadano);
   output.insertAdjacentHTML("beforeend", "<br />");
   output.insertAdjacentHTML("beforeend", vypocet);
@@ -80,11 +82,29 @@ function draw() {
   if (canvas && canvas.getContext) {
     let context = canvas.getContext("2d");
 
+    context.font = "15px Arial";
     context.beginPath();
-    context.moveTo(75, 75);
-    context.lineTo(10, 75);
-    context.lineTo(10, 25);
-    context.lineTo(75, 75);
+    context.strokeStyle = "blue";
+    context.moveTo(20, 20);
+    context.lineTo(20, 100);
+    context.textAlign = "right";
+    context.fillText("A", 20, 70);
+    context.stroke();
+
+    context.beginPath();
+    context.strokeStyle = "green";
+    context.moveTo(20, 100);
+    context.lineTo(200, 100);
+    context.textAlign = "right";
+    context.fillText("B", 100, 110);
+    context.stroke();
+
+    context.beginPath();
+    context.strokeStyle = "red";
+    context.moveTo(200, 100);
+    context.lineTo(20, 20);
+    context.textAlign = "right";
+    context.fillText("C", 110, 50);
     context.stroke();
   }
 }
