@@ -65,4 +65,4 @@ function draw() {
     }
   }
   
-  draw(); //malujeme trojuhelnik
+  draw(); //volame funkci pro malovani trojuhelniku
