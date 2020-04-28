@@ -41,8 +41,8 @@ function handleSubmit(e) {
     } else {
       b = Math.sqrt(Math.pow(c, 2) - Math.pow(a, 2));
       obsah = (a * b) / 2;
-      zadano = `Zadal jste: délky stran trojúhelníku A=${a}, C=${c}`;
-      vypocet = `délka strany tohoto trojúhelníku je B=${b} a obsah S=${obsah}`;
+      zadano = `Zadal jste: délky stran trojúhelníku <strong>A</strong>=${a}, <strong>C</strong>=${c}`;
+      vypocet = `délka strany tohoto trojúhelníku je <strong>B</strong>=${b} a obsah <strong>S</strong>=${obsah}`;
     }
   } else if (b && c) {
     if (b >= c) {
@@ -50,8 +50,8 @@ function handleSubmit(e) {
     } else {
       a = Math.sqrt(Math.pow(c, 2) - Math.pow(b, 2));
       obsah = (a * b) / 2;
-      zadano = `Zadal jste: délky stran trojúhelníku C=${b}, C=${c},`;
-      vypocet = `délka strany tohoto trojúhelníku je A=${a} a obsah S=${obsah}`;
+      zadano = `Zadal jste: délky stran trojúhelníku <strong>C</strong>=${b}, <strong>C</strong>=${c},`;
+      vypocet = `délka strany tohoto trojúhelníku je <strong>A</strong>=${a} a obsah <strong>S</strong>=${obsah}`;
     }
   } else {
     showAlert("Fill two inputs");
