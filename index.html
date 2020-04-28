@@ -17,7 +17,7 @@
   <div class="container">
 
     <header>
-      <h1>Vypocet treuhelnika</h1>
+      <h1>Vypocet trojuhelnika</h1>
     </header>
 
     <div class="draw">
@@ -33,20 +33,20 @@
 
     <form class="form" onsubmit="return handleSubmit(event)" name="triangle-form">
       <div class="form-group">
-        <label>Strana A
-          <input type="number" placeholder="cm" step="0.000000000000001" class="form-control" />
+        <label>Strana A (odvesna)
+          <input type="number" placeholder="cm" step="0.000000000000001" class="form-control" max="10" />
         </label>
       </div>
 
       <div class="form-group">
-        <label>Strana B
-          <input type="number" placeholder="cm" step="0.000000000000001" class="form-control" />
+        <label>Strana B (odvesna)
+          <input type="number" placeholder="cm" step="0.000000000000001" class="form-control" max="10" />
         </label>
       </div>
 
       <div class="form-group">
-        <label>Strana C
-          <input type="number" placeholder="cm" step="0.000000000000001" class="form-control" />
+        <label>Strana C (prepona)
+          <input type="number" placeholder="cm" step="0.000000000000001" class="form-control" max="15" />
         </label>
       </div>
 

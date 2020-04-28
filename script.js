@@ -1,4 +1,5 @@
 window.onload = () => {
+  // draw(); //volame funkci pro malovani trojuhelniku
   let myForm = document.forms["triangle-form"];
   myInputs = myForm.querySelectorAll("input");
   myInputs.forEach(function (el) {
@@ -60,6 +61,7 @@ function handleSubmit(e) {
   const output = document.querySelector(".output");
 
   console.log(a, b, c);
+  draw(a, b, c); //volame funkci pro malovani trojuhelniku
 
   output.insertAdjacentHTML("beforeend", zadano);
   output.insertAdjacentHTML("beforeend", "<br />");
@@ -77,36 +79,64 @@ function showAlert(text) {
   }, 5000);
 }
 
-function draw() {
+function draw(a, b, c) {
   const canvas = document.querySelector("#canvas");
   if (canvas && canvas.getContext) {
     let context = canvas.getContext("2d");
-
     context.font = "15px Arial";
-    context.beginPath();
-    context.strokeStyle = "blue";
-    context.moveTo(20, 20);
-    context.lineTo(20, 100);
-    context.textAlign = "right";
-    context.fillText("A", 20, 70);
-    context.stroke();
+    if (a && b && c) {
+      canvas.height = a * 110;
+      canvas.width = b * 110;
 
-    context.beginPath();
-    context.strokeStyle = "green";
-    context.moveTo(20, 100);
-    context.lineTo(200, 100);
-    context.textAlign = "right";
-    context.fillText("B", 100, 110);
-    context.stroke();
+      context.clearRect(0, 0, canvas.width, canvas.height);
 
-    context.beginPath();
-    context.strokeStyle = "red";
-    context.moveTo(200, 100);
-    context.lineTo(20, 20);
-    context.textAlign = "right";
-    context.fillText("C", 110, 50);
-    context.stroke();
+      context.beginPath();
+      context.strokeStyle = "blue";
+      context.moveTo(20, 20);
+      context.lineTo(20, a * 100);
+      context.textAlign = "right";
+      context.fillText("A", 18, a * 60);
+      context.stroke();
+
+      context.beginPath();
+      context.strokeStyle = "green";
+      context.moveTo(20, a * 100);
+      context.lineTo(b * 100, a * 100);
+      context.textAlign = "right";
+      context.fillText("B", b * 50, a * 105);
+      context.stroke();
+
+      context.beginPath();
+      context.strokeStyle = "red";
+      context.moveTo(b * 100, a * 100);
+      context.lineTo(20, 20);
+      context.textAlign = "right";
+      context.fillText("C", b * 51, a * 50);
+      context.stroke();
+    } else {
+      context.beginPath();
+      context.strokeStyle = "blue";
+      context.moveTo(20, 20);
+      context.lineTo(20, 100);
+      context.textAlign = "right";
+      context.fillText("A", 20, 70);
+      context.stroke();
+
+      context.beginPath();
+      context.strokeStyle = "green";
+      context.moveTo(20, 100);
+      context.lineTo(200, 100);
+      context.textAlign = "right";
+      context.fillText("B", 100, 110);
+      context.stroke();
+
+      context.beginPath();
+      context.strokeStyle = "red";
+      context.moveTo(200, 100);
+      context.lineTo(20, 20);
+      context.textAlign = "right";
+      context.fillText("C", 110, 50);
+      context.stroke();
+    }
   }
 }
-
-draw(); //volame funkci pro malovani trojuhelniku
