@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <link rel="icon" type="image/png" href="./favicon.png" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
@@ -33,20 +33,23 @@
 
     <form class="form" onsubmit="return handleSubmit(event)" name="triangle-form">
       <div class="form-group">
-        <label>Strana A (odvesna)
-          <input type="number" placeholder="cm" step="0.000000000000001" class="form-control" max="10" />
+        <label>Strana A
+          <input type="number" placeholder="(odvesna)" step="0.000000000000001" class="form-control" max="10" />
+          <small class="form-text text-muted">Maximalni hodnota 10</small>
         </label>
       </div>
 
       <div class="form-group">
-        <label>Strana B (odvesna)
-          <input type="number" placeholder="cm" step="0.000000000000001" class="form-control" max="10" />
+        <label>Strana B
+          <input type="number" placeholder="(odvesna)" step="0.000000000000001" class="form-control" max="10" />
+          <small class="form-text text-muted">Maximalni hodnota 10</small>
         </label>
       </div>
 
       <div class="form-group">
-        <label>Strana C (prepona)
-          <input type="number" placeholder="cm" step="0.000000000000001" class="form-control" max="15" />
+        <label>Strana C
+          <input type="number" placeholder="(prepona)" step="0.000000000000001" class="form-control" max="15" />
+          <small class="form-text text-muted">Maximalni hodnota 15</small>
         </label>
       </div>
 

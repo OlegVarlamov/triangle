@@ -1,9 +1,9 @@
 window.onload = () => {
-  // draw(); //volame funkci pro malovani trojuhelniku
+  draw(); //volame funkci pro malovani nahledoveho trojuhelniku
   let myForm = document.forms["triangle-form"];
   myInputs = myForm.querySelectorAll("input");
   myInputs.forEach(function (el) {
-    el.addEventListener("input", countFilledInputs);
+    el.addEventListener("input", countFilledInputs); // spocitame vyplnene inputy
   });
 };
 
@@ -14,11 +14,11 @@ function countFilledInputs() {
   }
   if (inputsWithValue === 2) {
     for (var i = 0; i < myInputs.length; i++) {
-      if (myInputs[i].value === "") myInputs[i].disabled = true;
+      if (myInputs[i].value === "") myInputs[i].disabled = true; // zakazeme trti input
     }
   } else {
     myInputs.forEach(function (el) {
-      el.disabled = false;
+      el.disabled = false; // povolime treti input
     });
   }
 }
@@ -31,7 +31,7 @@ function handleSubmit(e) {
 
   //   let result, zadano, vypocet; // definujeme promenne
   if (a && b) {
-    c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+    c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)); // vypocitame preponu
     obsah = (a * b) / 2;
     zadano = `Zadal jste: délky stran trojúhelníku <strong>A</strong>=${a}, <strong>B</strong>=${b}`;
     vypocet = `délka strany tohoto trojúhelníku je <strong>C</strong>=${c} a obsah <strong>S</strong>=${obsah}`;
@@ -39,7 +39,7 @@ function handleSubmit(e) {
     if (a >= c) {
       showAlert("Odvesna musi byt vetsi nez prepona!");
     } else {
-      b = Math.sqrt(Math.pow(c, 2) - Math.pow(a, 2));
+      b = Math.sqrt(Math.pow(c, 2) - Math.pow(a, 2)); // vypocitame odvesnu
       obsah = (a * b) / 2;
       zadano = `Zadal jste: délky stran trojúhelníku <strong>A</strong>=${a}, <strong>C</strong>=${c}`;
       vypocet = `délka strany tohoto trojúhelníku je <strong>B</strong>=${b} a obsah <strong>S</strong>=${obsah}`;
@@ -48,7 +48,7 @@ function handleSubmit(e) {
     if (b >= c) {
       showAlert("Odvesna musi byt vetsi nez prepona!");
     } else {
-      a = Math.sqrt(Math.pow(c, 2) - Math.pow(b, 2));
+      a = Math.sqrt(Math.pow(c, 2) - Math.pow(b, 2)); // vypocitame odvesnu
       obsah = (a * b) / 2;
       zadano = `Zadal jste: délky stran trojúhelníku <strong>C</strong>=${b}, <strong>C</strong>=${c},`;
       vypocet = `délka strany tohoto trojúhelníku je <strong>A</strong>=${a} a obsah <strong>S</strong>=${obsah}`;
@@ -61,7 +61,7 @@ function handleSubmit(e) {
   const output = document.querySelector(".output");
 
   console.log(a, b, c);
-  draw(a, b, c); //volame funkci pro malovani trojuhelniku
+  draw(a, b, c); //volame funkci pro malovani trojuhelniku s hodnoty
 
   output.insertAdjacentHTML("beforeend", zadano);
   output.insertAdjacentHTML("beforeend", "<br />");
